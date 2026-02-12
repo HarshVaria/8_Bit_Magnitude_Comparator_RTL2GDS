@@ -464,8 +464,4 @@ pt_shell -f run_pt_p2.tcl
 
 ---
 
-## License
-
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
-
 > **Note:** The SAED 32nm PDK and Synopsys tool outputs are subject to Synopsys licensing terms and cannot be redistributed.
