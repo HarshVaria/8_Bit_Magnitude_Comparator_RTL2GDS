@@ -1,4 +1,4 @@
-<img width="539" height="633" alt="report_timing_dc_shell" src="https://github.com/user-attachments/assets/5f51a2f8-6ba5-423a-b7b7-ce274ab35c2c" /># RTL-to-GDSII Implementation of 8-bit Magnitude Comparator
+# RTL-to-GDSII Implementation of 8-bit Magnitude Comparator
 
 > Complete ASIC physical design flow using **Synopsys EDA toolchain** on **SAED 32nm** technology node
 
@@ -202,7 +202,7 @@ endmodule
 
 RTL simulation performed using **Synopsys VCS** with waveform analysis in **Synopsys Verdi**.
 
-![Simulation Waveform](<img width="1366" height="636" alt="waveform_after_vcs" src="https://github.com/user-attachments/assets/b156a854-341a-43d8-b3d4-ba8ae6626434" />)
+![Simulation Waveform](https://github.com/user-attachments/assets/b156a854-341a-43d8-b3d4-ba8ae6626434)
 
 **Testbench Strategy:**
 - Exhaustive corner cases: `a == b`, `a > b`, `a < b`
@@ -215,16 +215,15 @@ RTL simulation performed using **Synopsys VCS** with waveform analysis in **Syno
 
 Gate-level synthesis performed using **Synopsys Design Compiler**.
 
-![Synthesis Schematic](<img width="539" height="633" alt="report_timing_dc_shell" src="https://github.com/user-attachments/assets/4cf81b99-0e8a-43c1-805b-ce48a99e8767" />)
+![Synthesis Schematic](https://github.com/user-attachments/assets/4cf81b99-0e8a-43c1-805b-ce48a99e8767)
 
 **Pre-layout Timing Report (Design Compiler):**
 
 | Metric | Value |
 |--------|-------|
-| Data Arrival Time | -2.59 |
-| Data Required Time | 2.85 |
-| Slack | 0.26 |
-
+| Data Arrival Time | -2.59 ns |
+| Data Required Time | 2.85 ns |
+| Slack | 0.26 ns |
 
 ---
 
@@ -232,7 +231,7 @@ Gate-level synthesis performed using **Synopsys Design Compiler**.
 
 Die area and core dimensions defined in **ICC2**.
 
-![Floorplan](<img width="532" height="526" alt="post_floorplan_iccc2" src="https://github.com/user-attachments/assets/c80c8ac0-f2ae-4bc3-aae1-e15363760417" />)
+![Floorplan](https://github.com/user-attachments/assets/c80c8ac0-f2ae-4bc3-aae1-e15363760417)
 
 ---
 
@@ -240,7 +239,7 @@ Die area and core dimensions defined in **ICC2**.
 
 Power grid (VDD/VSS rings and straps) created for uniform IR drop distribution.
 
-![Power Plan](<img width="524" height="528" alt="post_power_planning_icc2" src="https://github.com/user-attachments/assets/886a75da-d46a-4b16-b950-aeab8f6bd1b2" />)
+![Power Plan](https://github.com/user-attachments/assets/886a75da-d46a-4b16-b950-aeab8f6bd1b2)
 
 ---
 
@@ -248,7 +247,7 @@ Power grid (VDD/VSS rings and straps) created for uniform IR drop distribution.
 
 Standard cell placement with legalization performed in **ICC2**.
 
-![Placement](<img width="527" height="527" alt="post_placement_iccc2" src="https://github.com/user-attachments/assets/a15a611c-906c-4b63-8415-d7a27f17129b" />)
+![Placement](https://github.com/user-attachments/assets/a15a611c-906c-4b63-8415-d7a27f17129b)
 
 ---
 
@@ -256,7 +255,7 @@ Standard cell placement with legalization performed in **ICC2**.
 
 CTS performed with Concurrent Clock and Data (CCD) optimization in **ICC2**.
 
-![CTS](<img width="529" height="528" alt="post_clock_iccc2" src="https://github.com/user-attachments/assets/7164931d-9197-4e86-b839-2f2f7326ac9b" />)
+![CTS](https://github.com/user-attachments/assets/7164931d-9197-4e86-b839-2f2f7326ac9b)
 
 | CTS Metric | Value |
 |------------|-------|
@@ -270,31 +269,31 @@ CTS performed with Concurrent Clock and Data (CCD) optimization in **ICC2**.
 
 Routing completed using **ICC2 ZRoute** engine.
 
-
 **Post-Route Timing Report (ICC2):**
 
-![Routing](<img width="669" height="563" alt="report_timing_icc2_shell" src="https://github.com/user-attachments/assets/92388eb2-f32c-48ff-86ab-7c99cd7813b5" />)
+![Routing Timing](https://github.com/user-attachments/assets/92388eb2-f32c-48ff-86ab-7c99cd7813b5)
 
 | Metric | Value |
 |--------|-------|
-| Slack | 0.95 |
+| Slack | 0.95 ns |
 
 **Post-Route QoR Summary (ICC2):**
 
-![Routing](<img width="403" height="538" alt="report_qor_icc2_shell" src="https://github.com/user-attachments/assets/ec2defdf-dbb7-46ec-9d75-b93a1df0843f" />)
+![QoR Summary](https://github.com/user-attachments/assets/ec2defdf-dbb7-46ec-9d75-b93a1df0843f)
 
 | Metric | Value |
 |--------|-------|
-| Total Cell Area | 154.26 |
+| Total Cell Area | 154.26 µm² |
 | Cell Count | 75 |
 | DRC Violations | 0 |
+
 ---
 
 ## 9. Static Timing Analysis
 
 Final timing sign-off performed using **Synopsys PrimeTime**.
 
-![Timing Report](<img width="669" height="563" alt="report_timing_icc2_shell" src="https://github.com/user-attachments/assets/3ff81cd6-8bbc-492b-bcdb-6218a38849d7" />)
+![Timing Report](https://github.com/user-attachments/assets/3ff81cd6-8bbc-492b-bcdb-6218a38849d7)
 
 | Timing Metric | Value |
 |---------------|-------|
@@ -424,14 +423,14 @@ verdi -ssf novas.fsdb &
 ### 2. Synthesis
 
 ```bash
-cd synthesis/scripts/
+cd DC/
 dc_shell -topographical_mode -f run_dc.tcl | tee dc.log
 ```
 
 ### 3. Physical Design (ICC2)
 
 ```bash
-cd pnr/scripts/
+cd ICCII/scripts/
 icc2_shell -f floorplan.tcl
 icc2_shell -f power_planning.tcl
 icc2_shell -f placement.tcl
@@ -442,7 +441,7 @@ icc2_shell -f route.tcl
 ### 4. Static Timing Analysis
 
 ```bash
-cd sta/scripts/
+cd PT/scripts/
 pt_shell -f run_pt_p1.tcl
 pt_shell -f run_pt_p2.tcl
 ```
@@ -460,10 +459,13 @@ pt_shell -f run_pt_p2.tcl
 
 ## Author
 
-**Harsh**    
+**Harsh**  
 📅 June 2025
 
 ---
 
+## License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 > **Note:** The SAED 32nm PDK and Synopsys tool outputs are subject to Synopsys licensing terms and cannot be redistributed.
